@@ -11,11 +11,9 @@
         @foreach ($result as $res)
         <div class="column is-one-quarter">
             <div class="contact">
-                <ul>
-                    {{ $res['Nama'] }}<br/>
+                    <b>{{ $res['Nama'] }}</b><br/>
                     {{ $res['No_HP'] }}<br/>
                     {{ $res['Pekerjaan'] }}<br/>
-                </ul>
             </div>
         </div>
         @endforeach
