@@ -18,6 +18,11 @@ class FormController extends Controller
     }
 
     public function submit(Request $request){
+        $request->validate([
+            'nama' => 'required',
+            'no_telp' => 'required|numeric',
+        ]);
+
         $sent = array(
             'Nama' => $request->input('nama'),
             'No_HP' => $request->input('no_telp'),
@@ -26,6 +31,6 @@ class FormController extends Controller
 
         $form = new FormModel();
         $res = $form->write($sent);
-        echo $res;
+        return redirect('/');
     }
 }

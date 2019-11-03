@@ -20,10 +20,12 @@ class FormModel extends Model
         $old_file = $this->fetch();
         array_push($old_file, $array);
         
+
+
         if(Storage::put($this->FILE_PATH, json_encode($old_file))){
-            return "Data input success!";
+            return true;
         }else{
-            return "Data input failed.";
+            return false;
         }
     }
 }
