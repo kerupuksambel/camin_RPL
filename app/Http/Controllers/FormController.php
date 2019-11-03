@@ -9,7 +9,11 @@ class FormController extends Controller
 {
     public function index(){
         $data = new FormModel();
-        $res = array('result' => $data->fetch());
+        if(!empty($data->fetch())){
+            $res = array('result' => $data->fetch());
+        }else{
+            $res = array('result' => NULL);
+        }
         return view('list', $res);
     }
 

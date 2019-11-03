@@ -13,7 +13,11 @@ class FormModel extends Model
     }
 
     public function fetch(){
-        $raw_json = $this->decode(Storage::get($this->FILE_PATH));
+        $raw_json = (Storage::get($this->FILE_PATH));
+        if($raw_json == ''){
+            Storage::put($this->FILE_PATH, $this->encode(json_encode(array())));
+        }
+        $raw_json = $this->decode($raw_json);
         return json_decode($raw_json, true);
     }
 
@@ -28,7 +32,7 @@ class FormModel extends Model
         }
     }
 
-    private function decode($str){
+    private function decode($str){  
         return base64_decode($str);
     }
 

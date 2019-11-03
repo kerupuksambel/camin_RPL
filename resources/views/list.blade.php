@@ -8,14 +8,17 @@
     </div>
     @endisset
     <div class="columns is-multiline is-mobile">
+        @if (!is_null($result))
+            
         @foreach ($result as $res)
         <div class="column is-one-quarter">
             <div class="contact">
-                    <b>{{ $res['Nama'] }}</b><br/>
-                    {{ $res['No_HP'] }}<br/>
-                    {{ $res['Pekerjaan'] }}<br/>
+                <b>{{ $res['Nama'] }}</b><br/>
+                {{ $res['No_HP'] }}<br/>
+                {{ $res['Pekerjaan'] }}<br/>
             </div>
         </div>
         @endforeach
+        @endif
     </div>
 @endsection
