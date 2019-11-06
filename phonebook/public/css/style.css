@@ -1,0 +1,13 @@
+.container{
+    margin-top: 120px;
+}
+
+.contact{
+    border: 5px solid #333; 
+    text-align: center;
+    padding: 24px;
+}
+
+.contact ul{
+    list-style: none;
+}
